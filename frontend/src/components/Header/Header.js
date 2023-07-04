@@ -1,9 +1,10 @@
 import React from "react";
+import { HeaderStyled } from "./style";
 
 export default function Header() {
   return (
-    <div>
-      <p>TMD</p>
-    </div>
+    <HeaderStyled>
+      <p>TMDB</p>
+    </HeaderStyled>
   );
 }
