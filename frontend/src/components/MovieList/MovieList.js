@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
 
 export default function MovieList() {
- return (
-   <div>
-
-   </div>
- );
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  return <div></div>;
 }
