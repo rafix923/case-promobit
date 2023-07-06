@@ -34,6 +34,9 @@ const MovieList = () => {
   return (
     <div>
       {/* Retorna a lista de filmes */}
+      <button type="button" onClick={() => setCurrentPage(currentPage + 1)}>
+        Próxima Página
+      </button>
       {movies.map((movie) => (
         <MovieItem key={movie.id} movie={movie} />
       ))}
