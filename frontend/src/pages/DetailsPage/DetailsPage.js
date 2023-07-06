@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { fetchMovieDetails } from "../../services/apiService";
 
 export default function DetailsPage() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-  const [loading, setLoadin] = useState(true);
-  const [error, setError] = useState(null);  
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getMovieDetails = async () => {
+      try {
+        const fetchedMovie = await fetchMovieDetails(id);
+        setMovie(fetchedMovie);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+    getMovieDetails();
+  }, [id]);
   return (
     <div>
       <h1>Detalhes do filme</h1>
