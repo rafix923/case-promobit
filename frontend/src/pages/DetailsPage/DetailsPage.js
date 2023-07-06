@@ -21,6 +21,13 @@ export default function DetailsPage() {
     };
     getMovieDetails();
   }, [id]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
   return (
     <div>
       <h1>Detalhes do filme</h1>
