@@ -37,11 +37,12 @@ const MovieList = () => {
       {movies.map((movie) => (
         <MovieItem key={movie.id} movie={movie} />
       ))}
-
       {loading && <div>Loading...</div>}
       {error && <div>Error: {error.message}</div>}
-
-      <button onClick={() => setCurrentPage(currentPage + 1)}>
+      <button
+        type="button"
+        onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
+      >
         Próxima Página
       </button>
     </div>
