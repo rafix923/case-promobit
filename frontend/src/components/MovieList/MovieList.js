@@ -11,7 +11,7 @@ const MovieList = () => {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const fetchedMovies = await fetchMovies();
+        const fetchedMovies = await fetchMovies(currentPage);
         setMovies(fetchedMovies);
         setLoading(false);
       } catch (error) {
@@ -21,7 +21,7 @@ const MovieList = () => {
     };
 
     getMovies();
-  }, []);
+  }, [currentPage]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -34,12 +34,16 @@ const MovieList = () => {
   return (
     <div>
       {/* Retorna a lista de filmes */}
-      <button type="button" onClick={() => setCurrentPage(currentPage + 1)}>
-        Próxima Página
-      </button>
       {movies.map((movie) => (
         <MovieItem key={movie.id} movie={movie} />
       ))}
+
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
+
+      <button onClick={() => setCurrentPage(currentPage + 1)}>
+        Próxima Página
+      </button>
     </div>
   );
 };
