@@ -14,7 +14,7 @@ export const fetchMovies = async (page) => {
   }
 };
 
-export const fetchMoviesDetails = async (id) => {
+export const fetchMovieDetails = async (id) => {
   try {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY_API}`
