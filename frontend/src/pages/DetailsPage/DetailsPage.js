@@ -30,7 +30,8 @@ export default function DetailsPage() {
   }
   return (
     <div>
-      <h1>Detalhes do filme</h1>
+      <h1>{movie.title}</h1>
+      <p>{movie.overview}</p>
     </div>
   );
 }
