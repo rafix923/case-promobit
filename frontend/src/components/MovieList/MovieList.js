@@ -31,7 +31,7 @@ const MovieList = () => {
     };
 
     getMovies();
-  }, [currentPage]);
+  }, [currentPage, setMovies, setLoading, setError]);
 
   if (loading) {
     return <div>Loading...</div>;
