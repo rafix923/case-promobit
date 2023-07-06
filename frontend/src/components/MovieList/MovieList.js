@@ -1,9 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import { fetchMovies } from "../../services/apiService";
 import MovieItem from "../MovieItem/MovieItem";
 import ReactPaginate from "react-paginate";
+import { MovieContext } from "../../contexts/MovieContext";
 
 const MovieList = () => {
+  const {
+    movies,
+    setMovies,
+    loading,
+    setLoading,
+    error,
+    setError,
+    currentPage,
+    setCurrentPage,
+    totalPages,
+    setTotalPages,
+  } = useContext(MovieContext);
 
   useEffect(() => {
     const getMovies = async () => {
