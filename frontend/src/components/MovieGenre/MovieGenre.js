@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function MovieGenre(props) {
+export default function MovieGenre({ name, onClick, active }) {
   const { name } = props;
-  return <button>{name}</button>;
-};
+  return (
+    <button type="button" onClick={onclick}>
+      {name}
+    </button>
+  );
+}
