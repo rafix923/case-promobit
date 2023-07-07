@@ -1,7 +1,7 @@
-export const goToHome = (history) => {
-  history("/");
+export const goToHome = (navigate) => {
+  navigate("/");
 };
 
-export const goToDetailsPage = (history, id) => {
-  history(`/movie/${id}`);
+export const goToDetailsPage = (navigate, id) => {
+  navigate(`/movie/${id}`);
 };
