@@ -16,12 +16,13 @@ const MovieList = () => {
     setCurrentPage,
     totalPages,
     setTotalPages,
+    filters,
   } = useContext(MovieContext);
 
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const fetchedMovies = await fetchMovies(currentPage);
+        const fetchedMovies = await fetchMovies(currentPage, filters);
         setMovies(fetchedMovies);
         setLoading(false);
       } catch (error) {
@@ -31,7 +32,7 @@ const MovieList = () => {
     };
 
     getMovies();
-  }, [currentPage, setMovies, setLoading, setError]);
+  }, [currentPage, setMovies, setLoading, setError, filters]);
 
   if (loading) {
     return <div>Loading...</div>;
