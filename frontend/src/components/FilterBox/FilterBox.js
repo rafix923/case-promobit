@@ -2,9 +2,29 @@ import React, { useContext } from "react";
 import { MovieContext } from "../../contexts/MovieContext";
 import { FilterBoxParagraph, FilterBoxStyled, FilterBoxTitle } from "./style";
 import MovieGenre from "../MovieGenre/MovieGenre";
+import { fetchMovies } from "../../services/apiService";
 
 export default function FilterBox() {
-  const { genres, filters, handleFilterGenres } = useContext(MovieContext);
+  const {
+    genres,
+    filters,
+    handleFilterGenres,
+    setCurrentPage,
+    setMovies,
+    setError,
+  } = useContext(MovieContext);
+
+  const handleGenreClick = async (genreId) => {
+    setCurrentPage(1);
+    handleFilterGenres(genreId);
+    try {
+      const movies = await fetchMovies(1, filters);
+      setMovies(movies);
+    } catch (error) {
+      setError(error);
+    }
+  };
+
   return (
     <FilterBoxStyled>
       <FilterBoxTitle>
@@ -14,14 +34,14 @@ export default function FilterBox() {
         <h2>Filtre por:</h2>
       </FilterBoxParagraph>
       {genres &&
-        genres.map((genre) => {
+        genres.map((genre) => (
           <MovieGenre
             key={genre.id}
             name={genre.name}
-            onClick={() => handleFilterGenres(genre.id)}
+            onClick={() => handleGenreClick(genre.id)}
             active={filters.includes(genre.id)}
-          />;
-        })}
+          />
+        ))}
     </FilterBoxStyled>
   );
 }
