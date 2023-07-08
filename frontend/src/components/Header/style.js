@@ -3,7 +3,8 @@ import { headerBackground } from "../../constants/colors";
 
 export const HeaderStyled = styled.div`
 background: ${headerBackground};
-height: 4vh;
+width: 100vw;
+position: fixed;
 `;
 
 export const HeaderLogo = styled.div`
