@@ -1,4 +1,6 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
+import { fetchGenres } from "../services/apiService";
+
 export const MovieContext = createContext();
 
 export const MovieDataProvider = ({ children }) => {
@@ -8,6 +10,20 @@ export const MovieDataProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(5);
   const [filters, setFilters] = useState([]);
+  const [genres, setGenres] = useState([]);
+
+  useEffect(() => {
+    const getGenres = async () => {
+      try {
+        const fetchedGenres = await fetchGenres();
+        setGenres(fetchedGenres);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    getGenres();
+  }, []);
 
   const handleFilterGenres = (genreId) => {
     if (filters.includes(genreId)) {
@@ -32,6 +48,7 @@ export const MovieDataProvider = ({ children }) => {
         setTotalPages,
         filters,
         handleFilterGenres,
+        genres,
       }}
     >
       {children}
