@@ -24,6 +24,7 @@ const MovieList = () => {
       try {
         const fetchedMovies = await fetchMovies(currentPage, filters);
         setMovies(fetchedMovies);
+        setTotalPages(5)
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -32,7 +33,7 @@ const MovieList = () => {
     };
 
     getMovies();
-  }, [currentPage, setMovies, setLoading, setError, filters]);
+  }, [currentPage, setMovies, setLoading, setError,setTotalPages, filters]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -64,7 +65,7 @@ const MovieList = () => {
         nextLabel={"Próxima"}
         breakLabel={"..."}
         marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={setTotalPages}
       />
     </div>
   );
