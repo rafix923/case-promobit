@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetails } from "../../services/apiService";
+import Header from "../../components/Header/Header";
 
 export default function DetailsPage() {
   const { id } = useParams();
@@ -30,6 +31,7 @@ export default function DetailsPage() {
   }
   return (
     <div>
+      <Header />
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
     </div>
