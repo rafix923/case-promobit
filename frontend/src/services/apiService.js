@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_FILMS_URL, KEY_API } from "../constants/urls";
+import { BASE_FILMS_URL, KEY_API, BASE_GENRE_FILTER } from "../constants/urls";
 
 export const fetchMovies = async (page) => {
   try {
@@ -22,5 +22,20 @@ export const fetchMovieDetails = async (id) => {
     return response.data;
   } catch (error) {
     throw new Error("Desculpe. Não foi possível obter os detalhes do filme.");
+  }
+};
+
+export const fetchGenres = async (genres) => {
+  try {
+    let genreQuery = "";
+    if (genres.length > 0) {
+      genreQuery = `&with_genres=${genres.join(",")}`;
+    }
+    const response = await axios.get(
+      `${BASE_GENRE_FILTER}list?api_key=${KEY_API}${genreQuery}`
+    );
+    return response.data.genres;
+  } catch (error) {
+    throw new Error("Desculpe. Não foi possível obter os gêneros dos filmes.");
   }
 };
