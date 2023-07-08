@@ -7,11 +7,9 @@ import { MovieDataProvider } from "../../contexts/MovieContext";
 export default function Home() {
   return (
     <MovieDataProvider>
-      <div>
-        <Header />
-        <FilterBox />
-        <MovieList />
-      </div>
+      <Header />
+      <FilterBox />
+      <MovieList />
     </MovieDataProvider>
   );
 }
