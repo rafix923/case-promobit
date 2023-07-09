@@ -7,6 +7,7 @@ flex-direction: column;
 height: 55vh;
 background-color: ${filterBackground};
 padding-top: 46px;
+overflow-x: hidden;
 `;
 
 export const FilterBoxTitle = styled.div`
@@ -26,10 +27,17 @@ color: #fff;
 padding-bottom: 30px;
 `;
 
+export const ButtonsContainer = styled.section`
+max-width: 1090px;
+display: flex;
+flex-wrap: wrap;
+margin: 0 auto;
+`;
+
 export const Buttons = styled.div`
 display: flex;
 justify-content: center;
-width: 53%;
+width: 100%;
 margin: 0 auto;
 gap: 10px;
 flex-wrap: wrap;
