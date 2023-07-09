@@ -1,5 +1,9 @@
 import React from "react";
+import { Button } from "./style";
 
-export default function MovieGenre({ name, onClick }) {
-  return <button onClick={onClick}>{name}</button>;
+
+export default function MovieGenre(props) {
+  const { name } = props;
+
+  return <Button>{name}</Button>;
 }

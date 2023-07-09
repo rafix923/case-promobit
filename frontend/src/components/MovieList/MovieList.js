@@ -3,6 +3,7 @@ import { fetchMovies } from "../../services/apiService";
 import MovieItem from "../MovieItem/MovieItem";
 import ReactPaginate from "react-paginate";
 import { MovieContext } from "../../contexts/MovieContext";
+import { CardsContainer } from "./style";
 
 const MovieList = () => {
   const {
@@ -24,7 +25,7 @@ const MovieList = () => {
       try {
         const fetchedMovies = await fetchMovies(currentPage, filters);
         setMovies(fetchedMovies);
-        setTotalPages(5)
+        setTotalPages(5);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -33,7 +34,7 @@ const MovieList = () => {
     };
 
     getMovies();
-  }, [currentPage, setMovies, setLoading, setError,setTotalPages, filters]);
+  }, [currentPage, setMovies, setLoading, setError, setTotalPages, filters]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -48,12 +49,12 @@ const MovieList = () => {
   };
 
   return (
-    <div>
-      {/* Retorna a lista de filmes */}
-      {movies.map((movie) => (
-        <MovieItem key={movie.id} movie={movie} />
-      ))}
-
+    <>
+      <CardsContainer>
+        {/* Retorna a lista de filmes */}
+        {movies &&
+movies.map((movie) => <MovieItem key={movie.id} movie={movie} />)}
+      </CardsContainer>
       <ReactPaginate
         pageCount={totalPages}
         initialPage={currentPage - 1}
@@ -67,7 +68,7 @@ const MovieList = () => {
         marginPagesDisplayed={2}
         pageRangeDisplayed={setTotalPages}
       />
-    </div>
+    </>
   );
 };
 
