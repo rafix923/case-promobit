@@ -1,6 +1,11 @@
 import React, { useContext } from "react";
 import { MovieContext } from "../../contexts/MovieContext";
-import { FilterBoxParagraph, FilterBoxStyled, FilterBoxTitle } from "./style";
+import {
+  Buttons,
+  FilterBoxParagraph,
+  FilterBoxStyled,
+  FilterBoxTitle,
+} from "./style";
 import MovieGenre from "../MovieGenre/MovieGenre";
 import { fetchMovies } from "../../services/apiService";
 
@@ -33,15 +38,17 @@ export default function FilterBox() {
       <FilterBoxParagraph>
         <h2>Filtre por:</h2>
       </FilterBoxParagraph>
-      {genres &&
-        genres.map((genre) => (
-          <MovieGenre
-            key={genre.id}
-            name={genre.name}
-            onClick={() => handleGenreClick(genre.id)}
-            active={filters.includes(genre.id)}
-          />
-        ))}
+      <Buttons>
+        {genres &&
+          genres.map((genre) => (
+            <MovieGenre
+              key={genre.id}
+              name={genre.name}
+              onClick={() => handleGenreClick(genre.id)}
+              active={filters.includes(genre.id)}
+            />
+          ))}
+      </Buttons>
     </FilterBoxStyled>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { BASE_FILM_IMG } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
+import { MovieTitle } from "./style";
 
 export default function MovieItem({ movie }) {
   const navigate = useNavigate();
@@ -14,9 +15,9 @@ export default function MovieItem({ movie }) {
       <img
         src={`${BASE_FILM_IMG}/w500/${movie.poster_path}`}
         alt={movie.title}
-        style={{ width: "300px", height: "450px" }}
+        style={{ width: "12rem" }}
       />
-      <h2>{movie.title}</h2>
+      <MovieTitle>{movie.title}</MovieTitle>
       <p>{movie.release_date}</p>
     </div>
   );
