@@ -1,7 +1,7 @@
 import React from "react";
 import { BASE_FILM_IMG } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
-import { MovieTitle } from "./style";
+import { MovieRealese, MovieTitle } from "./style";
 
 export default function MovieItem({ movie }) {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export default function MovieItem({ movie }) {
         style={{ width: "12rem" }}
       />
       <MovieTitle>{movie.title}</MovieTitle>
-      <p>{movie.release_date}</p>
+      <MovieRealese>{movie.release_date}</MovieRealese>
     </div>
   );
 }
