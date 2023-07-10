@@ -6,6 +6,7 @@ width: 180px;
 font-size: 1.1rem;
 font-weight: 600;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+pointer-events: none;
 `;
 
 export const MovieRealese = styled.p`
@@ -16,4 +17,5 @@ font-style: normal;
 font-weight: 700;
 line-height: 3vh;
 margin-bottom:32px;
+pointer-events: none;
 `;
