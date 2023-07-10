@@ -3,8 +3,8 @@ import { fetchMovies } from "../../services/apiService";
 import MovieItem from "../MovieItem/MovieItem";
 import ReactPaginate from "react-paginate";
 import { MovieContext } from "../../contexts/MovieContext";
-import { CardsContainer } from "./style";
-
+import { CardsContainer, PaginateStyled } from "./style";
+import next from "../../assets/next.png";
 const MovieList = () => {
   const {
     movies,
@@ -53,21 +53,23 @@ const MovieList = () => {
       <CardsContainer>
         {/* Retorna a lista de filmes */}
         {movies &&
-movies.map((movie) => <MovieItem key={movie.id} movie={movie} />)}
+          movies.map((movie) => <MovieItem key={movie.id} movie={movie} />)}
       </CardsContainer>
-      <ReactPaginate
-        pageCount={totalPages}
-        initialPage={currentPage - 1}
-        forcePage={currentPage - 1}
-        onPageChange={handlePageChange}
-        containerClassName={"pagination"}
-        activeClassName={"active"}
-        previousLabel={null}
-        nextLabel={"Próxima"}
-        breakLabel={"..."}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={setTotalPages}
-      />
+      <PaginateStyled>
+        <ReactPaginate
+          pageCount={totalPages}
+          initialPage={currentPage - 1}
+          forcePage={currentPage - 1}
+          onPageChange={handlePageChange}
+          containerClassName={"pagination"}
+          activeClassName={"active"}
+          previousLabel={null}
+          nextLabel={<img src={next} alt="Next page arrow icon" />}
+          breakLabel={"..."}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={setTotalPages}
+        />
+      </PaginateStyled>
     </>
   );
 };
