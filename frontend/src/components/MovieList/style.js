@@ -9,6 +9,12 @@ export const CardsContainer = styled.div`
   width: 87vw;
   margin: 0 auto;
   gap: 20px;
+
+  :hover{
+    cursor: pointer;
+    transform: scale(1.20);
+    transition: transform 0.3s ease;
+  }
 `;
 
 export const PaginateStyled = styled.div`
@@ -19,8 +25,7 @@ export const PaginateStyled = styled.div`
   .pagination {
     display: flex;
     justify-content: center;
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
     font-style: normal;
     color: #5c16c5;
     list-style-type: none;
@@ -52,8 +57,7 @@ export const PaginateStyled = styled.div`
 export const LastPage = styled.p`
   color: #5c16c5;
   text-align: end;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: 700;
   display: flex;
