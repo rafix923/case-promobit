@@ -29,7 +29,7 @@ Siga o layout do figma sugerido. Não há necessidade de ser pixel perfect mas r
 - ✅ Na raiz do projeto, será necessário incluir um arquivo README.md com as instruções para construir seu projeto localmente. Opcionalmente você pode detalhar as razões pelas escolhas de ferramentas e técnicas aplicadas ao desafio.
 - ✅ O app deverá se comportar da mesma forma na última versão estável dos seguintes browsers: Chrome, Firefox, Edge.
 - ✅ O app deverá ser responsivo.
-- 
+
 ## Extras 
 
 - [ ] O usuário deve conseguir filtrar os filmes listados por gênero, com a possibilidade de usar mais de um gênero.
@@ -49,12 +49,16 @@ Siga o layout do figma sugerido. Não há necessidade de ser pixel perfect mas r
 
 1) O deploy do projeto foi realizado utilizando ...
 
-- Cole este link na url do seu navegador: ...
+Cole este link na url do seu navegador: ...
 
 2) Documentação da API utilizada.
 
-- API: [https://documenter.getpostman.com/view/22348177/2s93z86NDr
+API: [https://documenter.getpostman.com/view/22348177/2s93z86NDr
 ](https://developer.themoviedb.org/docs/getting-started)
+
+## Layout do Figma
+
+Link: https://www.figma.com/file/rM7WPqhLY9ObnGzSCeWLxB/Teste-Front-End
 
 ## Passos para rodar o projeto localmente
   
