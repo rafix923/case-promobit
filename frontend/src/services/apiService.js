@@ -39,3 +39,16 @@ export const fetchGenres = async () => {
     throw new Error("Desculpe. Não foi possível obter os gêneros dos filmes.");
   }
 };
+
+export const fetchMovieCertification = async (id) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${KEY_API}`
+    );
+    const results = response.data.results;
+    const certification = results.find((item) => item.iso_3166_1 === "BR");
+    return certification?.release_dates[0].certification || "N/A";
+  } catch (error) {
+    throw new Error("Desculpe. Não foi possível obter a classificação etária do filme.");
+  }
+};

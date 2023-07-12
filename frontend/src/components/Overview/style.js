@@ -25,12 +25,21 @@ font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sa
 width: max-content;
 `;
 
+export const MovieInfo = styled.div`
+display: flex;
+flex-direction: row;
+position: absolute;
+margin: 150px 0 0 650px;
+color: #fff;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+width: 100vw;
+`;
 
 export const Synopsis = styled.h1`
 display: flex;
 flex-direction: row;
 position: absolute;
-margin: 150px 0 0 650px;
+margin: 312px 0 0 650px;
 color: #fff;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
 width: max-content;
@@ -42,7 +51,7 @@ flex-direction: row;
 position: absolute;
 justify-content: center;
 width: 50vw;
-margin: 196px 0 0 650px;
+margin: 356px 0 0 650px;
 color: #fff;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
 line-height: 26px;
