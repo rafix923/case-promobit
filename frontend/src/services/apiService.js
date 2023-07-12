@@ -52,3 +52,23 @@ export const fetchMovieCertification = async (id) => {
     throw new Error("Desculpe. Não foi possível obter a classificação etária do filme.");
   }
 };
+
+export const fetchMovieCrewInfo = async (id) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${KEY_API}`
+    );
+    const crew = response.data.crew;
+    const characters = response.data.cast.map((actor) => actor.character);
+    const director = crew.find((member) => member.job === "Director");
+    const writer = crew.find((member) => member.department === "Writing");
+    
+    return {
+      characters,
+      director: director?.name || "N/A",
+      writer: writer?.name || "N/A"
+    };
+  } catch (error) {
+    throw new Error("Desculpe. Não foi possível obter as informações da equipe do filme.");
+  }
+};
