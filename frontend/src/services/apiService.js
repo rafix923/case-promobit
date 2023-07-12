@@ -59,16 +59,20 @@ export const fetchMovieCrewInfo = async (id) => {
       `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${KEY_API}&language=pt-BR`
     );
     const crew = response.data.crew;
-    const characters = response.data.cast.map((actor) => actor.character);
-    const director = crew.find((member) => member.job === "Director");
-    const writer = crew.find((member) => member.department === "Writing");
+    const filteredCrew = [];
     
-    return {
-      characters,
-      director: director?.name || "N/A",
-      writer: writer?.name || "N/A"
-    };
+    crew.forEach((member) => {
+      if (member.job === "Screenplay" || member.job === "Director") {
+        filteredCrew.push({ name: member.name, job: member.job });
+      }
+    });
+
+    return filteredCrew;
   } catch (error) {
     throw new Error("Desculpe. Não foi possível obter as informações da equipe do filme.");
   }
 };
+
+
+
+

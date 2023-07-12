@@ -135,12 +135,12 @@ export default function Overview() {
       <Synopsis>Sinopse</Synopsis>
       <TextOverview>{movie.overview}</TextOverview>
       <section>
-      {Object.entries(crewInfo).map(([key, value]) => (
-    <div key={key}>
-      <h2>{key}</h2>
-      <p>{value}</p>
-    </div>
-  ))}
+        {crewInfo && crewInfo.map((crew, index) => (
+          <div key={index}>
+            <h2>{crew.name}</h2>
+            <p>{crew.job}</p>
+          </div>
+        ))}
       </section>
     </DetailsContainer>
   );
