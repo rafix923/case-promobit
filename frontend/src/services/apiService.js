@@ -56,7 +56,7 @@ export const fetchMovieCertification = async (id) => {
 export const fetchMovieCrewInfo = async (id) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${KEY_API}`
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${KEY_API}&language=pt-BR`
     );
     const crew = response.data.crew;
     const characters = response.data.cast.map((actor) => actor.character);

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import {
   fetchMovieDetails,
   fetchMovieCertification,
+  fetchMovieCrewInfo,
 } from "../../services/apiService";
 import { BASE_FILM_IMG, KEY_API } from "../../constants/urls";
 import { format, getYear } from "date-fns";
@@ -26,6 +27,7 @@ export default function Overview() {
   const [error, setError] = useState(null);
   const [releaseDate, setReleaseDate] = useState({});
   const [certification, setCertification] = useState("");
+  const [crewInfo, setCrewInfo] = useState([]);
 
   useEffect(() => {
     const getMovieDetails = async () => {
@@ -65,9 +67,19 @@ export default function Overview() {
       }
     };
 
+    const getCrewInfo = async () => {
+      try {
+        const fetchedCrewInfo = await fetchMovieCrewInfo(id);
+        setCrewInfo(fetchedCrewInfo);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     getMovieDetails();
     getReleaseDate();
     getCertification();
+    getCrewInfo();
   }, [id]);
 
   if (loading) {
@@ -120,9 +132,16 @@ export default function Overview() {
         />
         <p>Avaliação dos usuários</p>
       </ProgressbarContainer>
-
       <Synopsis>Sinopse</Synopsis>
       <TextOverview>{movie.overview}</TextOverview>
+      <section>
+      {Object.entries(crewInfo).map(([key, value]) => (
+    <div key={key}>
+      <h2>{key}</h2>
+      <p>{value}</p>
+    </div>
+  ))}
+      </section>
     </DetailsContainer>
   );
 }
