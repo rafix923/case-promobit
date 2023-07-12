@@ -76,3 +76,23 @@ export const fetchMovieCrewInfo = async (id) => {
     );
   }
 };
+
+export const fetchOriginalCast = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_FILMS_URL}/movie/${id}/credits?api_key=${KEY_API}&language=pt-BR`
+    );
+    const cast = response.data.cast;
+    const originalCast = cast
+      .filter((member) => member.order < 5)
+      .map((member) => ({
+        name: member.name,
+        profile_path: member.profile_path,
+      }));
+    return originalCast;
+  } catch (error) {
+    throw new Error(
+      "Desculpe. Não foi possível obter as informações do elenco original."
+    );
+  }
+};
