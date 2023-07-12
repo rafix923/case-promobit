@@ -4,9 +4,9 @@ import { filterBackground } from "../../constants/colors";
 export const DetailsContainer = styled.div`
 display: flex;
 flex-direction: column;
-height: 55vh;
+height: 65vh;
+width: 100vw;
 background-color: ${filterBackground};
-padding-top: 46px;
 `;
 
 export const ImageCard = styled.img`
@@ -85,4 +85,22 @@ font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sa
 line-height: 26px;
 font-size: 1.2rem;
 width: 1080px;
+`;
+
+export const CrewInfoSection = styled.section`
+display: flex;
+flex-direction: row;
+position: absolute;
+width: 56vw;
+color: #dddddd;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+margin: 430px 0 0 649px;
+flex-wrap: wrap;
+gap: 16px; 
+`;
+
+export const CrewName = styled.h2`
+    margin-right: 23px;
+    line-height: 4vh;
+    font-size: 1.2rem;
 `;

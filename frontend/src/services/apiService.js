@@ -49,18 +49,20 @@ export const fetchMovieCertification = async (id) => {
     const certification = results.find((item) => item.iso_3166_1 === "BR");
     return certification?.release_dates[0].certification || "N/A";
   } catch (error) {
-    throw new Error("Desculpe. Não foi possível obter a classificação etária do filme.");
+    throw new Error(
+      "Desculpe. Não foi possível obter a classificação etária do filme."
+    );
   }
 };
 
 export const fetchMovieCrewInfo = async (id) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${KEY_API}&language=pt-BR`
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${KEY_API}`
     );
     const crew = response.data.crew;
     const filteredCrew = [];
-    
+
     crew.forEach((member) => {
       if (member.job === "Screenplay" || member.job === "Director") {
         filteredCrew.push({ name: member.name, job: member.job });
@@ -69,10 +71,8 @@ export const fetchMovieCrewInfo = async (id) => {
 
     return filteredCrew;
   } catch (error) {
-    throw new Error("Desculpe. Não foi possível obter as informações da equipe do filme.");
+    throw new Error(
+      "Desculpe. Não foi possível obter as informações da equipe do filme."
+    );
   }
 };
-
-
-
-
