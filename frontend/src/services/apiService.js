@@ -8,7 +8,7 @@ export const fetchMovies = async (page, genres) => {
       genreQuery = `&with_genres=${genres.join(",")}`;
     }
     const response = await axios.get(
-      `${BASE_FILMS_URL}/day?api_key=${KEY_API}&page=${page}${genreQuery}`
+      `${BASE_FILMS_URL}/day?api_key=${KEY_API}&page=${page}${genreQuery}&language=pt-BR`
     );
     return response.data.results;
   } catch (error) {
@@ -21,7 +21,7 @@ export const fetchMovies = async (page, genres) => {
 export const fetchMovieDetails = async (id) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY_API}`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY_API}&language=pt-BR`
     );
     return response.data;
   } catch (error) {
@@ -37,5 +37,18 @@ export const fetchGenres = async () => {
     return response.data.genres;
   } catch (error) {
     throw new Error("Desculpe. Não foi possível obter os gêneros dos filmes.");
+  }
+};
+
+export const fetchMovieCertification = async (id) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${KEY_API}`
+    );
+    const results = response.data.results;
+    const certification = results.find((item) => item.iso_3166_1 === "BR");
+    return certification?.release_dates[0].certification || "N/A";
+  } catch (error) {
+    throw new Error("Desculpe. Não foi possível obter a classificação etária do filme.");
   }
 };
