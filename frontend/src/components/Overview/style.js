@@ -33,6 +33,7 @@ margin: 150px 0 0 650px;
 color: #fff;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
 width: 100vw;
+font-size: 1.2rem;
 `;
 
 export const Synopsis = styled.h1`

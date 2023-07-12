@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchMovieDetails, fetchMovieCertification } from "../../services/apiService";
+import {
+  fetchMovieDetails,
+  fetchMovieCertification,
+} from "../../services/apiService";
 import { BASE_FILM_IMG, KEY_API } from "../../constants/urls";
 import { format, getYear } from "date-fns";
 import axios from "axios";
@@ -77,6 +80,7 @@ export default function Overview() {
   const dateFormatted = release_date
     ? format(new Date(release_date), "dd/MM/yyyy")
     : "";
+
   const year = release_date ? getYear(new Date(release_date)) : "";
   const movieHour = runtime ? Math.floor(runtime / 60) : "";
   const movieMin = runtime ? runtime % 60 : "";
@@ -84,15 +88,16 @@ export default function Overview() {
   return (
     <DetailsContainer>
       <ImageCard src={`${BASE_FILM_IMG}/w500/${poster_path}`} alt={title} />
-      <DetailsPageTitle>{title}</DetailsPageTitle>
+      <DetailsPageTitle>{title}({year})</DetailsPageTitle>
       <MovieInfo>
-      {`${certification} anos`}  {dateFormatted} (BR) {movieHour}h {movieMin}min{" "}
+        {`${certification} anos`} {dateFormatted} (BR)
         {genres
           ? genres.map(
               (genre, index) =>
                 ` ${genre.name}${index + 1 === genres.length ? " " : ", "}`
             )
           : ""}
+        {movieHour}h {movieMin}min{""}
       </MovieInfo>
       <Synopsis>Sinopse</Synopsis>
       <TextOverview>{movie.overview}</TextOverview>

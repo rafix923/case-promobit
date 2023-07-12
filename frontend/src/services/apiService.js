@@ -8,7 +8,7 @@ export const fetchMovies = async (page, genres) => {
       genreQuery = `&with_genres=${genres.join(",")}`;
     }
     const response = await axios.get(
-      `${BASE_FILMS_URL}/day?api_key=${KEY_API}&page=${page}${genreQuery}`
+      `${BASE_FILMS_URL}/day?api_key=${KEY_API}&page=${page}${genreQuery}&language=pt-BR`
     );
     return response.data.results;
   } catch (error) {
@@ -21,7 +21,7 @@ export const fetchMovies = async (page, genres) => {
 export const fetchMovieDetails = async (id) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY_API}`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY_API}&language=pt-BR`
     );
     return response.data;
   } catch (error) {
