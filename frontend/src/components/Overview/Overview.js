@@ -17,6 +17,8 @@ import {
   TextOverview,
   MovieInfo,
   ProgressbarContainer,
+  CrewInfoSection,
+  CrewName,
 } from "./style";
 import { mainProgressbarColor } from "../../constants/colors";
 
@@ -134,14 +136,15 @@ export default function Overview() {
       </ProgressbarContainer>
       <Synopsis>Sinopse</Synopsis>
       <TextOverview>{movie.overview}</TextOverview>
-      <section>
-        {crewInfo && crewInfo.map((crew, index) => (
-          <div key={index}>
-            <h2>{crew.name}</h2>
-            <p>{crew.job}</p>
-          </div>
-        ))}
-      </section>
+      <CrewInfoSection>
+        {crewInfo &&
+          crewInfo.map((crew, index) => (
+            <div key={index}>
+              <CrewName>{crew.name}</CrewName>
+              <p>{crew.job}</p>
+            </div>
+          ))}
+      </CrewInfoSection>
     </DetailsContainer>
   );
 }

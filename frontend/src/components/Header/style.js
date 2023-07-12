@@ -8,6 +8,6 @@ position: fixed;
 `;
 
 export const HeaderLogo = styled.div`
- width:20vh;
+ width:20vw;
  padding: 8px 0 0 55px;
 `;
