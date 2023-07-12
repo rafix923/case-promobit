@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import { fetchMovieDetails } from "../../services/apiService";
 import { BASE_FILM_IMG } from "../../constants/urls";
 import {
-  CardOverview,
   DetailsContainer,
   DetailsPageTitle,
-  MainContainer,
+  ImageCard,
+  Synopsis,
   TextOverview,
 } from "./style";
 
-export default function BoxOverview() {
+export default function Overview() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -39,11 +39,12 @@ export default function BoxOverview() {
   return (
     <>
       <DetailsContainer>
-        <CardOverview
+        <ImageCard
           src={`${BASE_FILM_IMG}/w500/${movie.poster_path}`}
           alt={movie.title}
         />
         <DetailsPageTitle>{movie.title}</DetailsPageTitle>
+        <Synopsis>Sinopse</Synopsis>
         <TextOverview>{movie.overview}</TextOverview>
       </DetailsContainer>
     </>
