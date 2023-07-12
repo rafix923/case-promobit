@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { filterBackground } from "../../constants/colors";
 
 export const MainContainer = styled.div`
 display: flex;
