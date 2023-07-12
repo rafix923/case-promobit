@@ -7,6 +7,7 @@ import {
 import { BASE_FILM_IMG, KEY_API } from "../../constants/urls";
 import { format, getYear } from "date-fns";
 import axios from "axios";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import {
   DetailsContainer,
   DetailsPageTitle,
@@ -14,7 +15,9 @@ import {
   Synopsis,
   TextOverview,
   MovieInfo,
+  ProgressbarContainer,
 } from "./style";
+import { mainProgressbarColor } from "../../constants/colors";
 
 export default function Overview() {
   const { id } = useParams();
@@ -75,7 +78,8 @@ export default function Overview() {
     return <div>Error: {error.message}</div>;
   }
 
-  const { title, poster_path, release_date, runtime, genres } = movie;
+  const { title, poster_path, release_date, runtime, genres, vote_average } =
+    movie;
 
   const dateFormatted = release_date
     ? format(new Date(release_date), "dd/MM/yyyy")
@@ -84,11 +88,14 @@ export default function Overview() {
   const year = release_date ? getYear(new Date(release_date)) : "";
   const movieHour = runtime ? Math.floor(runtime / 60) : "";
   const movieMin = runtime ? runtime % 60 : "";
+  const percentage = (vote_average / 100) * 10;
 
   return (
     <DetailsContainer>
       <ImageCard src={`${BASE_FILM_IMG}/w500/${poster_path}`} alt={title} />
-      <DetailsPageTitle>{title}({year})</DetailsPageTitle>
+      <DetailsPageTitle>
+        {title}({year})
+      </DetailsPageTitle>
       <MovieInfo>
         {`${certification} anos`} {dateFormatted} (BR)
         {genres
@@ -99,6 +106,21 @@ export default function Overview() {
           : ""}
         {movieHour}h {movieMin}min{""}
       </MovieInfo>
+      <ProgressbarContainer>
+        <CircularProgressbar
+          value={percentage}
+          maxValue={1}
+          text={`${vote_average * 10}%`}
+          styles={buildStyles({
+            rotation: 0.5 + (1 - percentage / 100) / 2,
+            pathColor: `${mainProgressbarColor}`,
+            textColor: `${mainProgressbarColor}`,
+            trailColor: "#42246d",
+          })}
+        />
+        <p>Avaliação dos usuários</p>
+      </ProgressbarContainer>
+
       <Synopsis>Sinopse</Synopsis>
       <TextOverview>{movie.overview}</TextOverview>
     </DetailsContainer>
