@@ -32,19 +32,21 @@ export default function Trailer() {
     return <div>Error: {error.message}</div>;
   }
 
+  const videoOptions = {
+    height: "450",
+    width: "800",
+  };
+
   return (
     <div>
       {trailerUrl ? (
-        <YouTube videoId={getVideoId(trailerUrl)} />
+        <YouTube videoId={getVideoId(trailerUrl)} opts={videoOptions} />
       ) : (
         <div>No trailer available</div>
       )}
     </div>
   );
 }
-
-/*Essa função é utilizada para obter o id do vídeo a partir da URL completa
-e passá-la ao componente YouTube para reproduzir o vídeo corretamente.*/
 
 function getVideoId(url) {
   const params = new URLSearchParams(new URL(url).search);
