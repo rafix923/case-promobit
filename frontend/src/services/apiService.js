@@ -89,9 +89,10 @@ export const fetchOriginalCast = async (id) => {
     );
     const cast = response.data.cast;
     const originalCast = cast
-      .filter((member) => member.order < 5)
+      .filter((member) => member.order < 16)
       .map((member) => ({
         name: member.name,
+        character: member.character,
         profile_path: member.profile_path,
       }));
     return originalCast;
