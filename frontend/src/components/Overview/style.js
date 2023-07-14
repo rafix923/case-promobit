@@ -2,105 +2,106 @@ import styled from "styled-components";
 import { filterBackground } from "../../constants/colors";
 
 export const DetailsContainer = styled.div`
-display: flex;
-flex-direction: column;
-height: 65vh;
-width: 100vw;
+width: 1900px;
 background-color: ${filterBackground};
+border: 6px solid;
+`;
+
+export const ContentWrapper = styled.div`
+  max-width: 1700px;
+  padding: 20px;
+
+  /* Estilos adicionais para dispositivos móveis */
+  @media (max-width: 768px) {
+  max-width: 1400px;
+  padding: 10px;
+  }
 `;
 
 export const ImageCard = styled.img`
-display: flex;
-flex-direction: column;
-position: absolute;
-width: 25rem;
-margin: 100px 0 0 230px;
+/* display: flex;
+position: relative; */
+width: 410px;
+margin: 63px 0 0 230px;
+border: 6px solid;
 `;
 
 export const DetailsPageTitle = styled.h1`
-margin: 100px 0 0 650px;
 color: #fff;
-width: max-content;
+margin: -612px 0 420px 650px;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
 font-size: 2.2rem;
+border: 1px solid red;
 `;
 
 export const MovieInfo = styled.div`
-display: flex;
-flex-direction: row;
-position: absolute;
-margin: 150px 0 0 650px;
+margin:-412px 0 0 650px;
 color: #fff;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
-width:582px;
 font-size: 1.2rem;
+border: 1px solid blueviolet;
 `;
 
 export const ProgressbarContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  width: 82px;
-  position: absolute;
-  margin: 192px 0 0 650px;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  background-color: #42246d;
-  border-radius: 50%;
-  
-  p{
-      display: flex;
-      flex-direction: row;
-      position: absolute;
-      margin: 9px 0 0 245px;
-      color: #fff;
-      font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
-      width: 130px;
-      font-weight: 100;
-    }
-    `;
+border-radius: 50%;
+width:83px;
+margin:12px 0 0 650px;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-size: 1.2rem;
+font-weight: 700;
+background-color: #42246d;
+`;
+
+export const LabelProgress = styled.p`
+border: 1px solid yellow;
+width:130px;
+margin:-66px 0 0 750px;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-size: 1rem;
+font-weight: 600;
+color: #fff;
+`;
 
 export const Synopsis = styled.h1`
-display: flex;
-flex-direction: row;
-width: max-content;
-position: absolute;
-margin: 312px 0 0 650px;
+border: 1px solid blueviolet;
+margin: 52px 0 0 650px;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-size: 1.3rem;
+font-weight: 600;
 color: #fff;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
-font-size: 1.6rem;
 `;
 
 export const TextOverview = styled.p`
-display: flex;
-flex-direction: row;
-position: absolute;
-justify-content: center;
-width: 50vw;
-margin: 356px 0 0 650px;
-color: #dddddd;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
-line-height: 26px;
-font-size: 1.2rem;
-width: 1080px;
+border: 1px solid blueviolet;
+margin: 12px 0 0 650px;
+padding-right: 12px;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-size: 1rem;
+color: #fff;
+
 `;
 
 export const CrewInfoSection = styled.section`
 display: flex;
 flex-direction: row;
-position: absolute;
-width: 56vw;
-color: #dddddd;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
-margin: 430px 0 0 649px;
 flex-wrap: wrap;
-gap: 16px; 
+border: 1px solid blueviolet;
+margin: 12px 0 0 650px;
+font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+color: #fff;
+gap: 36px;
+
+/* Estilos adicionais para dispositivos móveis */
+/* @media (max-width: 768px) {
+flex-wrap: nowrap;
+  } */
 `;
 
 export const CrewName = styled.h2`
-    margin-right: 23px;
-    line-height: 4vh;
-    font-size: 1.2rem;
+border: 1px solid #fff;
+/* width: max-content; */
+font-size: 1.2rem;
+/* margin-right: 23px; */
+margin: 0 20px 0 0 ;
+font-size: 1.3rem;
 `;

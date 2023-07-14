@@ -2,6 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchOriginalCast } from "../../services/apiService";
 import { BASE_FILM_IMG } from "../../constants/urls";
+import {
+  ActorName,
+  CastContainer,
+  CastImage,
+  CastMember,
+  CharacterName,
+  SectionTitle,
+} from "./style";
 
 export default function Casting() {
   const { id } = useParams();
@@ -34,22 +42,24 @@ export default function Casting() {
 
   return (
     <section>
-      <h2>Elenco Original</h2>
-      <div className="cast-container">
-        {originalCast && originalCast.map((actor) => (
-          <div key={actor.name}>
-            {actor.profile_path ? (
-              <img
-                src={`${BASE_FILM_IMG}/w185${actor.profile_path}`}
-                alt={actor.name}
-              />
-            ) : (
-              <div>No Image</div>
-            )}
-            <p>{actor.name}</p>
-          </div>
-        ))}
-      </div>
+      <SectionTitle>Elenco Original</SectionTitle>
+      <CastContainer>
+        {originalCast &&
+          originalCast.map((actor) => (
+            <CastMember key={actor.name}>
+              {actor.profile_path ? (
+                <CastImage
+                  src={`${BASE_FILM_IMG}/original${actor.profile_path}`}
+                  alt={actor.name}
+                />
+              ) : (
+                <div>Image not found</div>
+              )}
+              <ActorName>{actor.name}</ActorName>
+              <CharacterName>{actor.character}</CharacterName>
+            </CastMember>
+          ))}
+      </CastContainer>
     </section>
   );
 }

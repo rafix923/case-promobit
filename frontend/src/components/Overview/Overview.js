@@ -19,6 +19,8 @@ import {
   ProgressbarContainer,
   CrewInfoSection,
   CrewName,
+  LabelProgress,
+  ContentWrapper,
 } from "./style";
 import { mainProgressbarColor } from "../../constants/colors";
 
@@ -106,45 +108,48 @@ export default function Overview() {
 
   return (
     <DetailsContainer>
-      <ImageCard src={`${BASE_FILM_IMG}/w500/${poster_path}`} alt={title} />
-      <DetailsPageTitle>
-        {title}({year})
-      </DetailsPageTitle>
-      <MovieInfo>
-        {`${certification} anos`} {dateFormatted} (BR)
-        {genres
-          ? genres.map(
-              (genre, index) =>
-                ` ${genre.name}${index + 1 === genres.length ? " " : ", "}`
-            )
-          : ""}
-        {movieHour}h {movieMin}min{""}
-      </MovieInfo>
-      <ProgressbarContainer>
-        <CircularProgressbar
-          value={percentage}
-          maxValue={1}
-          text={`${vote_average * 10}%`}
-          styles={buildStyles({
-            rotation: 0.5 + (1 - percentage / 100) / 2,
-            pathColor: `${mainProgressbarColor}`,
-            textColor: `${mainProgressbarColor}`,
-            trailColor: "#42246d",
-          })}
-        />
-        <p>Avaliação dos usuários</p>
-      </ProgressbarContainer>
-      <Synopsis>Sinopse</Synopsis>
-      <TextOverview>{movie.overview}</TextOverview>
-      <CrewInfoSection>
-        {crewInfo &&
-          crewInfo.map((crew, index) => (
-            <div key={index}>
-              <CrewName>{crew.name}</CrewName>
-              <p>{crew.job}</p>
-            </div>
-          ))}
-      </CrewInfoSection>
+      <ContentWrapper>
+        <ImageCard src={`${BASE_FILM_IMG}/w500/${poster_path}`} alt={title} />
+        <DetailsPageTitle>
+          {title}({year})
+        </DetailsPageTitle>
+        <MovieInfo>
+          {`${certification} anos`} {dateFormatted} (BR)
+          {genres
+            ? genres.map(
+                (genre, index) =>
+                  ` ${genre.name}${index + 1 === genres.length ? " " : ", "}`
+              )
+            : ""}
+          {movieHour}h {movieMin}min{""}
+        </MovieInfo>
+        <ProgressbarContainer>
+          <div style={{ width: 82 }}>
+            <CircularProgressbar
+              value={percentage}
+              maxValue={1}
+              text={`${vote_average * 10}%`}
+              styles={buildStyles({
+                rotation: 0.5 + (1 - percentage / 100) / 2,
+                pathColor: `${mainProgressbarColor}`,
+                textColor: `${mainProgressbarColor}`,
+              })}
+            />
+          </div>
+        </ProgressbarContainer>
+        <LabelProgress>Avaliação dos usuários</LabelProgress>
+        <Synopsis>Sinopse</Synopsis>
+        <TextOverview>{movie.overview}</TextOverview>
+        <CrewInfoSection id="section">
+          {crewInfo &&
+            crewInfo.map((crew, index) => (
+              <div id="text" key={index}>
+                <CrewName>{crew.name}</CrewName>
+                {/* <p>{crew.job}</p> */}
+              </div>
+            ))}
+        </CrewInfoSection>
+      </ContentWrapper>
     </DetailsContainer>
   );
 }
