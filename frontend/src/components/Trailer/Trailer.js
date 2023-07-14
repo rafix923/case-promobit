@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieTrailer } from "../../services/apiService";
 import YouTube from "react-youtube";
-
+import { Title, Video } from "./style";
 export default function Trailer() {
   const { id } = useParams();
   const [trailerUrl, setTrailerUrl] = useState(null);
@@ -39,11 +39,14 @@ export default function Trailer() {
 
   return (
     <div>
-      {trailerUrl ? (
-        <YouTube videoId={getVideoId(trailerUrl)} opts={videoOptions} />
-      ) : (
-        <div>No trailer available</div>
-      )}
+      <Title>Trailer</Title>
+      <Video>
+        {trailerUrl ? (
+          <YouTube videoId={getVideoId(trailerUrl)} opts={videoOptions} />
+        ) : (
+          <div>No trailer available</div>
+        )}
+      </Video>
     </div>
   );
 }
