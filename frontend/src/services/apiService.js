@@ -102,3 +102,34 @@ export const fetchOriginalCast = async (id) => {
     );
   }
 };
+
+export const fetchMovieTrailer = async (id) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY_API}`
+    );
+    const videos = response.data.results;
+    const trailer = videos.find((video) => video.type === "Trailer");
+    if (trailer) {
+      const videoId = trailer.key;
+      return `https://www.youtube.com/watch?v=${videoId}`;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    throw new Error("Desculpe. Não foi possível obter o trailer do filme.");
+  }
+};
+
+export const fetchRecommendations = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_CASTING_IMG}${id}/recommendations?api_key=${KEY_API}&language=pt-BR&page=1`
+    );
+    return response.data.results;
+  } catch (error) {
+    throw new Error(
+      "Desculpe. Não foi possível obter as recomendações de filmes."
+    );
+  }
+};
