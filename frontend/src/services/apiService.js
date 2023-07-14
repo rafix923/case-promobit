@@ -121,3 +121,15 @@ export const fetchMovieTrailer = async (id) => {
   }
 };
 
+export const fetchRecommendations = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_CASTING_IMG}${id}/recommendations?api_key=${KEY_API}&language=pt-BR&page=1`
+    );
+    return response.data.results;
+  } catch (error) {
+    throw new Error(
+      "Desculpe. Não foi possível obter as recomendações de filmes."
+    );
+  }
+};
