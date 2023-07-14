@@ -1,5 +1,10 @@
 import axios from "axios";
-import { BASE_FILMS_URL, KEY_API, BASE_GENRE_FILTER } from "../constants/urls";
+import {
+  BASE_FILMS_URL,
+  KEY_API,
+  BASE_GENRE_FILTER,
+  BASE_CASTING_IMG,
+} from "../constants/urls";
 
 export const fetchMovies = async (page, genres) => {
   try {
@@ -80,7 +85,7 @@ export const fetchMovieCrewInfo = async (id) => {
 export const fetchOriginalCast = async (id) => {
   try {
     const response = await axios.get(
-      `${BASE_FILMS_URL}/movie/${id}/credits?api_key=${KEY_API}&language=pt-BR`
+      `${BASE_CASTING_IMG}${id}/credits?api_key=${KEY_API}`
     );
     const cast = response.data.cast;
     const originalCast = cast
