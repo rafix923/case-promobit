@@ -145,7 +145,7 @@ export default function Overview() {
             crewInfo.map((crew, index) => (
               <div id="text" key={index}>
                 <CrewName>{crew.name}</CrewName>
-                {/* <p>{crew.job}</p> */}
+                <p>{crew.job}</p>
               </div>
             ))}
         </CrewInfoSection>
