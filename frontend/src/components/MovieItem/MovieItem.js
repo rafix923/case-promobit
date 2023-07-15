@@ -1,7 +1,7 @@
 import React from "react";
 import { BASE_FILM_IMG } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
-import { MovieRealese, MovieTitle } from "./style";
+import { CardImg, MovieRealese, MovieTitle } from "./style";
 
 export default function MovieItem({ movie }) {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ export default function MovieItem({ movie }) {
 
   return (
     <div onClick={handleItemClick}>
-      <img
+      <CardImg
         src={`${BASE_FILM_IMG}/w500/${movie.poster_path}`}
         alt={movie.title}
         style={{ width: "12rem" }}

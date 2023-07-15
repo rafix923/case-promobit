@@ -19,3 +19,7 @@ line-height: 3vh;
 margin-bottom:32px;
 pointer-events: none;
 `;
+
+export const CardImg = styled.img`
+border-radius: 4px;
+  `;
