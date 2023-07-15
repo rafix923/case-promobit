@@ -6,6 +6,7 @@ margin: 86px 0 26px 120px;
 display: flex;
 flex-direction: column;
 font-family: ${Roboto};
+font-size: 1.9rem;
 `;
 
 export const CastContainer = styled.section`
