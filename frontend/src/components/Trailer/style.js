@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Title = styled.h1`
 margin: 35px 0 21px 120px;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+font-size: 2.3rem;
 `;
 
 export const Video = styled.div`

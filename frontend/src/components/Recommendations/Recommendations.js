@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchRecommendations } from "../../services/apiService";
+import { BASE_FILM_IMG } from "../../constants/urls";
+import {
+  MovieTitle,
+  RealeaseDate,
+  RelatedMoviesContainer,
+  RelatedMoviesImage,
+  SectionTitle,
+} from "./style";
 
 export default function Recommendations() {
   const { id } = useParams();
@@ -33,19 +41,19 @@ export default function Recommendations() {
 
   return (
     <section>
-      <h2>Recomendações</h2>
-      <div>
+      <SectionTitle>Recomendações</SectionTitle>
+      <RelatedMoviesContainer>
         {recommendations.map((movie) => (
           <div key={movie.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+            <RelatedMoviesImage
+              src={`${BASE_FILM_IMG}/original${movie.poster_path}`}
               alt={movie.title}
             />
-            <p>{movie.title}</p>
-            <p>{movie.release_date}</p>
+            <MovieTitle>{movie.title}</MovieTitle>
+            <RealeaseDate>{movie.release_date}</RealeaseDate>
           </div>
         ))}
-      </div>
+      </RelatedMoviesContainer>
     </section>
   );
 }
