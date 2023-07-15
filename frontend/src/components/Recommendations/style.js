@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Roboto } from "../../constants/fonts";
 
 export const RelatedMoviesImage = styled.img`
 height: 250px;
@@ -10,7 +11,7 @@ export const SectionTitle = styled.h2`
 margin: 86px 0 26px 120px; 
 display: flex;
 flex-direction: column;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+font-family: ${Roboto};
 font-size: 2rem;
 `;
 
@@ -21,7 +22,7 @@ flex-direction: row;
 flex-wrap: wrap;
 width: 1660px;
 margin: 36px 0 120px 110px; 
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+font-family: ${Roboto};
 `;
 
 export const MovieTitle = styled.p`
