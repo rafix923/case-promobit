@@ -47,18 +47,20 @@ Siga o layout do figma sugerido. Não há necessidade de ser pixel perfect mas r
 
 ## Deploy 
 
-1) O deploy do projeto foi realizado utilizando ...
+O deploy do projeto foi realizado utilizando a Vercel
 
-Cole este link na url do seu navegador: ...
+URL do projeto em produção: https://case-promobit-3b7d.vercel.app/
 
-2) Documentação da API utilizada.
+## Documentação da API TMDB
 
-API: [https://documenter.getpostman.com/view/22348177/2s93z86NDr
+[https://documenter.getpostman.com/view/22348177/2s93z86NDr
 ](https://developer.themoviedb.org/docs/getting-started)
 
 ## Layout do Figma
 
-Link: https://www.figma.com/file/rM7WPqhLY9ObnGzSCeWLxB/Teste-Front-End
+O layout deste projeto foi pré-estabelecido pela empresa aplicadora da seleção técnica - Promobit.
+
+https://www.figma.com/file/rM7WPqhLY9ObnGzSCeWLxB/Teste-Front-End
 
 ## Passos para rodar o projeto localmente
   
