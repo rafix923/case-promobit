@@ -33,25 +33,27 @@ export default function FilterBox() {
 
   return (
     <FilterBoxStyled>
-      <FilterBoxTitle>
-        <h1>Milhões de filmes, séries e pessoas para descobrir. Explore já.</h1>
-      </FilterBoxTitle>
-      <FilterBoxParagraph>
-        <h2>Filtre por:</h2>
-      </FilterBoxParagraph>
-      <ButtonsContainer>
-        <Buttons>
-          {genres &&
-            genres.map((genre) => (
-              <MovieGenre
-                key={genre.id}
-                name={genre.name}
-                onClick={() => handleGenreClick(genre.id)}
-                active={filters.includes(genre.id)}
-              />
-            ))}
-        </Buttons>
-      </ButtonsContainer>
+       <FilterBoxTitle>
+          <h1>
+            Milhões de filmes, séries e pessoas para descobrir. Explore já.
+          </h1>
+        </FilterBoxTitle>
+        <FilterBoxParagraph>
+          <h2>Filtre por:</h2>
+        </FilterBoxParagraph>
+        <ButtonsContainer>
+          <Buttons>
+            {genres &&
+              genres.map((genre) => (
+                <MovieGenre
+                  key={genre.id}
+                  name={genre.name}
+                  onClick={() => handleGenreClick(genre.id)}
+                  active={filters.includes(genre.id)}
+                />
+              ))}
+          </Buttons>
+        </ButtonsContainer>
     </FilterBoxStyled>
   );
 }
