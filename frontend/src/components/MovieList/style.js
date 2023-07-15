@@ -1,50 +1,47 @@
 import styled from "styled-components";
+import { Roboto } from "../../constants/fonts";
 
 export const CardsContainer = styled.div`
-  /* display: flex;
-  flex-direction: row;
-  padding-top: 25px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 87vw;
-  margin: 0 auto;
-  gap: 20px; */
+display: flex;
+flex-wrap: wrap;
+margin: 36px 0 30px 110px; 
+gap: 20px;
 
   :hover{
-    /* cursor: pointer;
+    cursor: pointer;
     transform: scale(1.20);
-    transition: transform 0.3s ease; */
+    transition: transform 0.3s ease;
   }
 `;
 
 export const PaginateStyled = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+display: flex;
+flex-direction: column;
+align-items: center;
 
   .pagination {
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+    font-family: ${Roboto};
     font-style: normal;
     color: #5c16c5;
     list-style-type: none;
     font-weight: bold;
     line-height: 24px;
-    margin-bottom: 200px; */
+    margin-bottom: 200px;
 
     li {
       a {
-        /* margin: 16px;
-        cursor: pointer; */
+        margin: 16px;
+        cursor: pointer;
       }
     }
   }
 
   .active {
-    /* font-weight: bolder;
+    font-weight: bolder;
     color: #c163e9;
-    font-size: 1rem; */
+    font-size: 1rem;
   }
 
   img {
@@ -55,9 +52,9 @@ export const PaginateStyled = styled.div`
 `;
 
 export const LastPage = styled.p`
-  /* color: #5c16c5;
+  color: #5c16c5;
   text-align: end;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+  font-family: ${Roboto};
   font-style: normal;
   font-weight: 700;
   display: flex;
@@ -65,5 +62,5 @@ export const LastPage = styled.p`
   justify-content: center;
   gap: 5px;
   margin-top: -227px;
-  margin-left: 342px; */
+  margin-left: 342px;
 `;
