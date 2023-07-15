@@ -1,30 +1,28 @@
 import styled from "styled-components";
 import { filterBackground } from "../../constants/colors";
+import { Roboto } from "../../constants/fonts";
 
 export const FilterBoxStyled = styled.div`
-display: flex;
-flex-direction: column;
-height: 55vh;
+font-family: ${Roboto};
+width: 1900px;
+padding-bottom: 60px;
 background-color: ${filterBackground};
-padding-top: 46px;
-overflow-x: hidden;
 `;
 
 export const FilterBoxTitle = styled.div`
-display: flex;
-text-align: center;
-color: #FFF;
-width: 550px;
+color: #fff;
+width: 650px;
 margin: 0 auto;
-padding: 30px;
-font-size: 1rem;
-font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+padding-top: 70px ;
+font-size: 1.2rem;
+text-align: center;
 `;
 
 export const FilterBoxParagraph = styled.div`
 text-align: center;
+margin: 32px 0;
 color: #fff;
-padding-bottom: 30px;
+font-size: 0.82rem;
 `;
 
 export const ButtonsContainer = styled.section`
@@ -37,8 +35,6 @@ margin: 0 auto;
 export const Buttons = styled.div`
 display: flex;
 justify-content: center;
-width: 100%;
-margin: 0 auto;
 gap: 10px;
 flex-wrap: wrap;
 color: aliceblue;

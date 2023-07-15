@@ -1,16 +1,18 @@
 import styled from "styled-components";
+import { Roboto } from "../../constants/fonts";
 
 export const SectionTitle = styled.h2`
 margin: 86px 0 26px 120px; 
 display: flex;
 flex-direction: column;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+font-family: ${Roboto};
+font-size: 1.9rem;
 `;
 
 export const CastContainer = styled.section`
 display: flex;
 position: relative;
-font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
+font-family: ${Roboto};
 width: 1660px;
 margin: 0 0 0 120px; 
 overflow: scroll;
