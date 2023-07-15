@@ -4,9 +4,7 @@ export const SectionTitle = styled.h2`
 margin: 86px 0 26px 120px; 
 display: flex;
 flex-direction: column;
-width: 100;
 font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans","Helvetica Neue", sans-serif;
-
 `;
 
 export const CastContainer = styled.section`
