@@ -7,6 +7,16 @@ flex-wrap: wrap;
 margin: 36px 0 30px 110px; 
 gap: 20px;
 
+@media ((min-width:320px ) and (max-width: 480px)){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 480px;
+    margin: 20px 0 0  0;
+    gap: 0;
+    justify-content: space-around;
+}
+
   :hover{
     cursor: pointer;
     transform: scale(1.20);
