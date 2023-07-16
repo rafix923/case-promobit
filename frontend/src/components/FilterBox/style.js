@@ -9,17 +9,13 @@ padding-bottom: 60px;
 background-color: ${filterBackground};
 
 @media ((min-width:800px ) and  (max-width: 1920px)){
-    /* display: flex;
-    flex-direction: row; */
-    width: 100vw;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
 }
 
 @media ((min-width:481px ) and (max-width: 799px)){
-    /* display: flex;
-    flex-direction: row; */
-    width: 799px;
-    background-color: pink;
+      width: 500px;
 }
 
 @media ((min-width:320px ) and (max-width: 480px)){
@@ -36,11 +32,8 @@ font-size: 1.2rem;
 text-align: center;
 
 @media ((min-width:481px ) and (max-width: 799px)){
-    background-color: lightgreen;
-    display: flex;
-    flex-wrap: wrap;
-    width: 799px;
-    font-size: 0.89rem;
+    width: 420px;
+    font-size:12px;
 }
 
 @media ((min-width:320px ) and (max-width: 480px)){
@@ -54,6 +47,10 @@ text-align: center;
 margin: 32px 0;
 color: #fff;
 font-size: 0.82rem;
+
+@media ((min-width:481px ) and (max-width: 799px)){
+    margin: 30px 220px 12px -110px;
+}
 `;
 
 export const ButtonsContainer = styled.section`
@@ -61,6 +58,11 @@ max-width: 1090px;
 display: flex;
 flex-wrap: wrap;
 margin: 0 auto;
+
+@media ((min-width:481px ) and (max-width: 799px)){
+    width: 420px;
+    margin: 0 120px 0 40px;
+}
 `;
 
 export const Buttons = styled.div`
