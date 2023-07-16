@@ -23,4 +23,11 @@ pointer-events: none;
 
 export const CardImg = styled.img`
 border-radius: 4px;
+
+@media ((min-width:320px ) and (max-width: 480px)){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 8px;
+}
   `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderLogo, HeaderStyled } from "./style";
+import { HeaderLogo, HeaderStyled, Img } from "./style";
 import { goToHome } from "../../Routes/Coordinator";
 import logo from "../../assets/logo.svg";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ export default function Header() {
     <HeaderStyled>
       <HeaderLogo>
         {" "}
-        <img src={logo} alt="Tmdb logo" onClick={() => goToHome(navigate)} />
+        <Img src={logo} alt="Tmdb logo" onClick={() => goToHome(navigate)} />
       </HeaderLogo>
     </HeaderStyled>
   );
