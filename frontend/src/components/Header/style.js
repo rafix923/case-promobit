@@ -5,18 +5,16 @@ export const HeaderStyled = styled.div`
 display: flex;
 position: static;
 background: ${headerBackground};
-/* width: 1900px; */
 
 @media ((min-width:800px ) and  (max-width: 1920px)){
-    /* display: flex;
-    flex-direction: row; */
-    width: 100vw;
-    background-color: orange;
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
 }
 
 @media ((min-width:481px ) and (max-width: 799px)){
     display: flex;   
-    width: 799px;
+    width: 500px;
     background-color: blue;
 }
 
@@ -33,6 +31,9 @@ export const HeaderLogo = styled.div`
 `;
 
 export const Img = styled.img`
+ @media ((min-width:481px ) and (max-width: 799px)){
+    margin: 3px 0 3px 116px; 
+}
  @media ((min-width:320px ) and (max-width: 480px)){
     width: 136px;
     margin: 3px 0 3px 86px; 
