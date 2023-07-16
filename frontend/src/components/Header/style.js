@@ -15,7 +15,6 @@ background: ${headerBackground};
 @media ((min-width:481px ) and (max-width: 799px)){
     display: flex;   
     width: 500px;
-    background-color: blue;
 }
 
 @media ((min-width:320px ) and (max-width: 480px)){
@@ -26,8 +25,6 @@ background: ${headerBackground};
 
 export const HeaderLogo = styled.div`
  margin: 12px 0 6px 55px;
-
-
 `;
 
 export const Img = styled.img`
