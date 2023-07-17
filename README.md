@@ -111,6 +111,7 @@ Inicie o servidor
 
 ![image](https://github.com/rafix923/case-promobit/assets/99361183/4249ea74-bf0e-4bc8-b19a-c471883285d1)
 
+![image](https://github.com/rafix923/case-promobit/assets/99361183/f6f732fc-ff16-4076-8c5d-abbfe09a48c2)
 
 ## Desenvolvedor
   
