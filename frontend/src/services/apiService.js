@@ -37,7 +37,7 @@ export const fetchMovieDetails = async (id) => {
 export const fetchGenres = async () => {
   try {
     const response = await axios.get(
-      `${BASE_GENRE_FILTER}list?api_key=${KEY_API}`
+      `${BASE_GENRE_FILTER}list?api_key=${KEY_API}&language=pt-BR`
     );
     return response.data.genres;
   } catch (error) {
@@ -48,7 +48,7 @@ export const fetchGenres = async () => {
 export const fetchMovieCertification = async (id) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${KEY_API}`
+      `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=${KEY_API}&language=pt-BR`
     );
     const results = response.data.results;
     const certification = results.find((item) => item.iso_3166_1 === "BR");
@@ -106,7 +106,7 @@ export const fetchOriginalCast = async (id) => {
 export const fetchMovieTrailer = async (id) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY_API}`
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY_API}&language=pt-BR`
     );
     const videos = response.data.results;
     const trailer = videos.find((video) => video.type === "Trailer");
