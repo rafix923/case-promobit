@@ -94,6 +94,24 @@ Inicie o servidor
   npm run start
 ```
  --- 
+
+## Desktop layout
+![image](https://github.com/rafix923/case-promobit/assets/99361183/5d3ba65d-0f78-40d2-9bf8-49cc868a0017)
+
+![image](https://github.com/rafix923/case-promobit/assets/99361183/35e1f958-57f7-441d-9313-a0eb5569fb77)
+
+
+![image](https://github.com/rafix923/case-promobit/assets/99361183/44671c05-26e9-4a85-8cf8-b6b744077d06)
+
+![image](https://github.com/rafix923/case-promobit/assets/99361183/e5fb50cd-6b04-45ce-8c81-de3ba57c3817)
+
+## Mobile layout
+
+![image](https://github.com/rafix923/case-promobit/assets/99361183/b83f1a79-64ca-48ce-9358-c5ef0a53171d)
+
+![image](https://github.com/rafix923/case-promobit/assets/99361183/4249ea74-bf0e-4bc8-b19a-c471883285d1)
+
+
 ## Desenvolvedor
   
 - [Rafael Lopes](https://github.com/rafix923)
