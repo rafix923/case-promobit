@@ -13,6 +13,10 @@ display: flex;
 flex-direction: column;
 font-family: ${Roboto};
 font-size: 2rem;
+
+@media((min-width:320px) and (max-width: 480px)){
+   margin: 64px 0 0 32px;
+}
 `;
 
 export const RelatedMoviesContainer = styled.section`
@@ -23,6 +27,14 @@ flex-wrap: wrap;
 width: 1660px;
 margin: 36px 0 120px 110px; 
 font-family: ${Roboto};
+
+@media((min-width:320px) and (max-width: 480px)){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   margin: 24px 0 0 24px;
+   width: 431px;
+}
 `;
 
 export const MovieTitle = styled.p`

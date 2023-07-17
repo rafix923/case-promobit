@@ -7,6 +7,11 @@ display: flex;
 flex-direction: column;
 font-family: ${Roboto};
 font-size: 1.9rem;
+
+@media((min-width:320px) and (max-width: 480px)){
+   margin: 32px;
+   font-size: 1.6rem;
+}
 `;
 
 export const CastContainer = styled.section`
@@ -17,6 +22,11 @@ width: 1660px;
 margin: 0 0 0 120px; 
 overflow: scroll;
 overflow-y: hidden;
+
+@media((min-width:320px) and (max-width: 480px)){
+   margin: 0 0 0 32px;
+   width: 326px;
+}
 `;
 
 export const CastMember = styled.div`
