@@ -109,7 +109,7 @@ export default function Overview() {
   return (
     <DetailsContainer>
       <ContentWrapper>
-        <ImageCard src={`${BASE_FILM_IMG}/w500/${poster_path}`} alt={title} />
+        <ImageCard src={`${BASE_FILM_IMG}/original/${poster_path}`} alt={title} />
         <DetailsPageTitle>
           {title}({year})
         </DetailsPageTitle>
