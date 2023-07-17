@@ -10,7 +10,6 @@ font-family: ${Roboto};
 
 
 @media((min-width:320px) and (max-width: 480px)){
-    border: 1px solid green;
     display: flex;
     flex-direction: column;
     width: 480px;
@@ -19,9 +18,7 @@ font-family: ${Roboto};
 `;
 
 export const ContentWrapper = styled.div`
-/* max-width: 1700px; */
 padding: 20px;
-
 `;
 
 export const ImageCard = styled.img`
