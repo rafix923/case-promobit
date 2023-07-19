@@ -4,41 +4,34 @@ import { Roboto } from "../../constants/fonts";
 
 export const FilterBoxStyled = styled.div`
 font-family: ${Roboto};
-width: 1900px;
-padding-bottom: 60px;
 background-color: ${filterBackground};
-
-@media ((min-width:800px ) and  (max-width: 1920px)){
-    display: flex;
-    flex-direction: column;
-    width: 1920px;
-}
-
-@media ((min-width:481px ) and (max-width: 799px)){
-      width: 500px;
-}
+height: 61vh;
 
 @media ((min-width:320px ) and (max-width: 480px)){
-    width: 480px;
+   height: 90vh;
 }
 `;
 
 export const FilterBoxTitle = styled.div`
 color: #fff;
-width: 650px;
+flex-wrap: wrap;
 margin: 0 auto;
-padding-top: 70px ;
-font-size: 1.2rem;
 text-align: center;
+padding-top: 70px ;
 
-@media ((min-width:481px ) and (max-width: 799px)){
-    width: 420px;
-    font-size:12px;
+@media ((min-width:1200px )and (max-width: 1960px)){
+width: 40%;
+}
+
+@media ((min-width:481px ) and (max-width: 800px)){
+    width: 90%;
+    text-align: left;
+
 }
 
 @media ((min-width:320px ) and (max-width: 480px)){
-    width: 370px;
-    font-size: 0.80rem;
+    width: 90%;
+    text-align: left;
 }
 `;
 
@@ -46,22 +39,25 @@ export const FilterBoxParagraph = styled.div`
 text-align: center;
 margin: 32px 0;
 color: #fff;
-font-size: 0.82rem;
 
-@media ((min-width:481px ) and (max-width: 799px)){
-    margin: 30px 220px 12px -110px;
+
+@media ((min-width:481px ) and (max-width: 800px)){
+    text-align: left;
+    margin-left: 21px;
+}
+
+@media ((min-width:320px ) and (max-width: 480px)){
+    text-align: left;
+    margin-left: 21px;
 }
 `;
 
 export const ButtonsContainer = styled.section`
 max-width: 1090px;
-display: flex;
-flex-wrap: wrap;
 margin: 0 auto;
 
-@media ((min-width:481px ) and (max-width: 799px)){
-    width: 420px;
-    margin: 0 120px 0 40px;
+@media ((min-width:799px )and (max-width: 1960px)){
+width: 90%;
 }
 `;
 
@@ -71,4 +67,14 @@ justify-content: center;
 gap: 10px;
 flex-wrap: wrap;
 color: aliceblue;
+
+@media ((min-width:481px ) and (max-width: 800px)){
+    justify-content: left;
+    margin-left: 21px;
+}
+
+@media ((min-width:320px ) and (max-width: 480px)){
+    justify-content: left;
+    margin-left: 20px;
+}
 `;
