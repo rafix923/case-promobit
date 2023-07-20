@@ -11,7 +11,6 @@ padding: 12px;
 margin-left: 62px;
 
 @media ((min-width:481px ) and (max-width: 800px)){
-    /* justify-content: left; */
     margin: 0 0 0 140px;
 }
 
